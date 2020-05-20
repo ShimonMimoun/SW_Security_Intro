@@ -16,13 +16,14 @@ LeakFlag:
 
 StackFlag:
 	$(GCC) $(FADDRESS) -o StackFlag.o Stack_Out_OF_BOUNDS.c 
-	
+	./StackFlag.o
+
 UndeFlag:
 	$(GCC) $(FUNDEF) -o UndeFlag.o Undefined.c
-
+	./UndeFlag.o
 AdressFlag:
 	$(GCC) $(FADDRESS) -o AdressFlag.o UsingAddressSanitizer.c
-
+	./AdressFlag.o
 
 clean:
 	rm -f *.o *.a *.so *.out Sanitize_Example 

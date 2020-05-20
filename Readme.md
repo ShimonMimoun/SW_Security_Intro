@@ -1,14 +1,45 @@
 # SW Security
 
-  
-  
-  
-  
-  
+# Java exception
+## /Directory/Java/
 
+*Version* : Java-8
 
+*File* : `ExeptFile.java`
 
-##  GCC Sanitize Options
+  
+  `public  ExeptFile()`-->Default Constractor of class , receive null
+
+`public  ExeptFile  (String  path)  throws  IOException`-->Constractor that receiv String (path)
+
+`public  void  write_to_path  (String  file)  throws  IOException` --> Essaie d'ecrire dance to file exactly
+
+`public  static  void  test_ExptFile1()`-->TEST 1
+
+      
+`public  static  void  test_ExptFile2()` --> Test 2
+
+***Explain:***
+
+From the CERT guidelines below, demonstrate the two issues:
+
+[ERR08-J. Do not catch NullPointerException or any of its ancestors](https://www.securecoding.cert.org/confluence/display/java/ERR08-J.+Do+not+catch+NullPointerException+or+any+of+its+ancestors)
+
+and
+
+[EXP01-J. Do not use a null in a case where an object is required](https://www.securecoding.cert.org/confluence/display/java/EXP01-J.+Do+not+use+a+null+in+a+case+where+an+object+is+required)
+
+## RUN
+
+***Path:*** .
+
+    ./directory\JAVA\" && javac ExeptFile.java && java ExeptFile
+
+#  GCC Sanitize Options
+
+## /Directory/C
+
+- Version : `gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0`
 
 - Modern gcc compiler includes `–fsanitize=<options\>` for catching potential issues.
 - Read more: https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html
@@ -86,3 +117,12 @@ Small C-language program including four functions each demonstrating a different
 
 ## Author 
 [Shimon Mimoun](https://www.linkedin.com/in/shimonmimoun/)
+
+
+
+
+
+
+
+
+

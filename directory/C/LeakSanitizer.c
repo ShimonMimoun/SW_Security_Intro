@@ -7,8 +7,9 @@
 void MemoryNoFree() {
   malloc(7);
 }
-int main() {
+int main(int argc, char **argv) {
   MemoryNoFree();
   printf("ERROR: LeakSanitizer: detected memory leaks\n");
+   
   return 0;
 }
