@@ -1,26 +1,33 @@
 GCC=gcc
+FADDRESS=-fsanitize=address
+FLEAK=-fsanitize=leak
+FUNDEF=-fsanitize=undefined
 
-FLAGS= -g -fsanitize=address
+allWith: LeakFlag StackFlag UndeFlag AdressFlag
 
-all: LeakSanitizer.c Sanitize_Example.c Stack_Out_OF_BOUNDS.c usingAddressSanitizer.c
-	$(GCC) useAfterFree.c -o useAfterFree && ./useAfterFree /
-	$(GCC) stackUseAfterScope.c -o stackUseAfterScope && ./stackUseAfterScope /
-	$(GCC) memoryLeak.c -o memoryLeak && ./memoryLeak /
-	$(GCC) stackUseAfterScope.c -o stackUseAfterScope && ./stackUseAfterScope
+
 
 WITHOUT_FLAG_ALL:
-	$(GCC) -o Sanitize_Example Sanitize_Example.c && ./Sanitize_Example
+	$(GCC) -o Sanitize_Example.o Sanitize_Example.c && ./Sanitize_Example.o
 
-LeakSanitizer:
-	$(GCC) $(FLAGS) LeakSanitizer.c -o LeakSanitizer && ./LeakSanitizer 
+LeakFlag:
+	$(GCC) $(FLEAK) -o LeakFlag.o LeakSanitizer.c
+	./LeakFlag.o
+
+StackFlag:
+	$(GCC) $(FADDRESS) -o StackFlag.o Stack_Out_OF_BOUNDS.c 
+	
+UndeFlag:
+	$(GCC) $(FUNDEF) -o UndeFlag.o Undefined.c
+
+AdressFlag:
+	$(GCC) $(FADDRESS) -o AdressFlag.o UsingAddressSanitizer.c
 
 
 clean:
-	rm -f *.o *.a *.so *.out Sanitize_Example LeakSanitizer
+	rm -f *.o *.a *.so *.out Sanitize_Example 
 
-
-
-git:clean
+git:
 	git add --all
 	git commit -m "update files"
 	git push
