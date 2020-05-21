@@ -3,9 +3,6 @@ FADDRESS=-fsanitize=address
 FLEAK=-fsanitize=leak
 FUNDEF=-fsanitize=undefined
 
-allWith: LeakFlag StackFlag UndeFlag AdressFlag
-
-
 
 WITHOUT_FLAG_ALL:
 	$(GCC) -o Sanitize_Example.o Sanitize_Example.c && ./Sanitize_Example.o

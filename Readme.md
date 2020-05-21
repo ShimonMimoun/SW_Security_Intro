@@ -107,8 +107,6 @@ Small C-language program including four functions each demonstrating a different
 
 - `WITHOUT_FLAG_ALL`--> Run All example without flag 
 
-- `allWith` --> Run All example With Flag
-
 - `clean`--> Delete all unnecessary files
 
 - `LeakFlag`--> Lunch MemoryNoFree.c with Flag
