@@ -7,16 +7,21 @@
 
 *File* : `ExeptFile.java`
 
+
+In this class there are 2 implementions:
+1) We use a null value in case an object is required
+
+2) We did not catch NullPointerException or one of its ancestors......
+
   
-  `public  ExeptFile()`-->Default Constractor of class , receive null
+`public  ExeptFile()`-->Default Constractor of class , receive null
 
 `public  ExeptFile  (String  path)  throws  IOException`-->Constractor that receiv String (path)
 
-`public  void  write_to_path  (String  file)  throws  IOException` --> Essaie d'ecrire dance to file exactly
+`public  void  write_to_path  (String  file)  throws  IOException` --> try to write with file 
 
 `public  static  void  test_ExptFile1()`-->TEST 1
 
-      
 `public  static  void  test_ExptFile2()` --> Test 2
 
 ***Explain:***
